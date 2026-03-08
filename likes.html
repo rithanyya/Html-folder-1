@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>things he loves</title>
+<link rel="icon" href="img/img1.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="likes-page">
+
+<div class="bg"></div>
+
+<nav class="navbar">
+<a href="index.html">Home</a>
+<a href="ilh.html">Stuff I like about you</a>
+<a href="likes.html">things he loves</a>
+
+<a href="memories.html">memories</a>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="title">
+<h1 class="typewriter">Things He Loves </h1>
+</div>
+<br>
+<hr>
+
+<ul class="points">
+
+<li>rohit sharma</li>
+
+<li>rohit sharma</li>
+
+<li>rohit sharma</li>
+
+<li>also rohit sharma</li>
+
+<li>did i mention rohit sharma?</li>
+
+<li>and maybe cricket... but mostly rohit sharma</li>
+
+</ul>
+
+<img src="img/anime.png" class="anime-float">
+
+<script>
+
+const points = Array.from(document.querySelectorAll(".points li"));
+
+// shuffle order
+points.sort(() => Math.random() - 0.5);
+
+points.forEach((point,index)=>{
+    setTimeout(()=>{
+        point.style.opacity="1";
+        point.style.transition="opacity 0.6s ease";
+    }, index * 2000);
+});
+
+</script>
+<script>
+let lastScrollTop = 0; // track last scroll position
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // scrolling down → hide navbar
+        navbar.style.top = '-100px'; // moves it out of view
+    } else {
+        // scrolling up → show navbar
+        navbar.style.top = '40px';  // original position
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+});
+</script>
+</body>
+</html>

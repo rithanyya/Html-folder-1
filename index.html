@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lan="en">
+<meta charset="UTF-8">
+<html>
+    
+    <head>
+        
+    <title>If you’re having a bad day </title>
+     <link rel="icon" href="img/img1.jpg">
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+         <div class="bg"></div>
+          <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="ilh.html">Stuff I like about you</a>
+    <a href="likes.html">things he loves</a>
+  
+    <a href="memories.html">memories</a>
+  </nav>
+  <div class="content">
+
+    <center>
+  <h1 class="typewriter">
+    hi dev, this is for you btw
+    <span id="surprise" class="bow">🎀</span>
+</h1>
+
+<p id="secret-text" class="hidden">
+    this page exists because you matter 💗
+</p>
+<br>
+<h3><em>thought you'd like this,click around if you're bored!</em></h3></center>
+<br>
+<hr>
+<p><b>
+
+    someone i noticed over time not all at once, not loudly. he has this way of being present without needing attention. he’s comfortable in silence, and doesn’t rush to fill it in just to seem involved. tho its frustating that he doesnt talk, i’ve lowkey always liked that about him.
+
+he listens properly not the kind where you’re waiting for your turn to speak, but the kind where he’s actually taking things in. when he talks, it’s thoughtful usually to the point he doesn’t say more than he needs to, and somehow that makes what he says matter more.
+
+there’s also this calm confidence about him. not the loud kind, not ego, just someone who seems comfortable with who he is. being around him feels easy. nothing forced, nothing fake.
+
+and maybe the thing i like the most is how he makes me want to be better. not by asking me to change, but just by the way he is. the way he encourages me to grow, to do better, to be kinder and stronger… it says a lot about the kind of person he is.
+
+with him, it never feels like i have to prove anything. somehow it just feels like being myself is already enough :)
+</b></p>
+  </div>
+  <img src="img/anime.png" class="anime-float">
+
+<script>
+
+const points = document.querySelectorAll(".points li");
+
+points.forEach((point,index)=>{
+
+    const x = Math.random()*window.innerWidth*0.7;
+    const y = Math.random()*window.innerHeight*0.7;
+
+    point.style.left = x + "px";
+    point.style.top = y + "px";
+
+    setTimeout(()=>{
+        point.style.opacity="1";
+        point.style.transition="opacity 1s";
+    },index*2000);
+
+});
+
+</script>
+<script>
+let lastScrollTop = 0; // track last scroll position
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // scrolling down → hide navbar
+        navbar.style.top = '-100px'; // moves it out of view
+    } else {
+        // scrolling up → show navbar
+        navbar.style.top = '40px';  // original position
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+});
+</script>
+
+    </body>
+</html>
+

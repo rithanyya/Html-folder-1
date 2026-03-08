@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  color: white;
+}
+
+/* blurred background */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("img/devme.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px);
+  transform: scale(1.1); 
+  z-index: -1;
+}
+
+.content {
+  width: 75vw;
+  max-width: 1100px;
+  min-width: 700px;
+
+  padding: 60px 80px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 18px;
+  line-height: 1.8;
+
+  margin: 140px auto 60px auto; 
+}
+
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+}
+
+p {
+  font-size: 18px;
+  max-width: none;
+}
+@media (max-width: 900px) {
+  .content {
+    width: 90%;
+    min-width: unset;
+    padding: 40px;
+  }
+}
+.navbar {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+ 
+  display: flex;
+  gap: 50px;
+transform: translateX(-50%); /* shift to align center */
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+
+  z-index: 10;
+  
+    transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+
+  font-size: 20px;        
+  font-weight: 600;       
+  letter-spacing: 1.5px;
+  text-transform: lowercase;
+
+  opacity: 0.7;
+  position: relative;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.navbar a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 3px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* active page (add class="active" in HTML) */
+.navbar a.active {
+  opacity: 1;
+}
+
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* main content box */
+.content {
+  width: 75vw;
+  max-width: 1100px;
+  min-width: 700px;
+
+  padding: 60px 80px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 18px;
+  line-height: 1.8;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* text styling */
+h1 {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+}
+
+p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  .content {
+    width: 90%;
+    min-width: unset;
+    padding: 40px;
+  }
+
+  .navbar {
+    right: 20px;
+    gap: 25px;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
+}
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards,
+               blink 0.8s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+.anime-float {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 90px;
+    animation: floatAnime 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes floatAnime {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+.bow {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.bow:hover {
+    transform: scale(1.2);
+}
+
+.hidden {
+    opacity: 0;
+    margin-top: 10px;
+    font-style: italic;
+    transition: opacity 1s ease;
+    color: #ffd6e0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.points{
+    list-style:none;
+    width:70%;
+    margin:auto;
+    margin-top:40px;
+    padding:0;
+}
+
+.points li{
+    width:65%;              /* makes box longer */
+    background:rgba(0,0,0,0.6);  /* more transparent */
+    color: white;
+    padding:22px 28px;      /* makes box bigger */
+    border-radius:16px;
+    margin:25px 0;
+    font-size:20px;         /* bigger text */
+    line-height:1.6;
+    opacity:0;
+}
+.points li:nth-child(odd){
+    margin-right:auto;
+
+}
+
+.points li:nth-child(even){
+    margin-left:auto;
+}
+body{
+    padding-top:100px;
+}
+.title{
+    text-align:center;
+    color:white;
+    margin-top:140px;
+}
+.likes-area{
+    margin-top:40px;      /* keeps it below title */
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.points{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,180px);
+    justify-content:center;
+    gap:25px;
+    padding:0;
+}
+
+
+/* Container should be flex for proper spacing */
+.points {
+    display: flex;       /* arrange boxes in a row */
+    flex-wrap: wrap;     /* move boxes to next line if needed */
+    gap: 10px;           /* space between boxes */
+}
+
+/* Individual boxes */
+.points li {
+    background: rgba(255,255,255,0.6);
+    color: black;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 16px;
+
+
+    opacity: 0;          /* start invisible */
+     display: inline-block;   /* box size depends on text */
+    width: auto;             
+    white-space: nowrap;     
+    animation: fadeIn 0.5s forwards; /* fade in */
+    
+}
+
+/* Staggered animation: each box appears in order */
+.points li:nth-child(1) { animation-delay: 8s; }
+.points li:nth-child(2) { animation-delay: 12s; }
+.points li:nth-child(3) { animation-delay: 15s; }
+.points li:nth-child(4) { animation-delay: 21s; }
+.points li:nth-child(5) { animation-delay: 25s; }
+.points li:nth-child(6) { animation-delay: 30s; }
+.points li:nth-child(7) { animation-delay: 36s; }
+/* add more if needed */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+body.likes-page .bg{
+    background-image: url("img/devrohit.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: none;
+}
+.things-he-loves-title {
+    margin-top: 20px;   /* space below navbar */
+    margin-bottom: 10px; /* optional, space before boxes */
+    font-size: 24px;     /* adjust size if needed */
+    font-weight: bold;   /* optional styling */
+}
+.title-area {
+  text-align: center;        /* center horizontally */
+  margin-top: 80px;          /* space from top, adjust as needed */
+}
+
+.typewriter {
+  display: inline-block;     /* allow width animation */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;  /* cursor effect */
+  font-size: 36px;
+  letter-spacing: 2px;
+
+  width: 0;                  /* start hidden */
+  animation: typing 4s steps(40, end) forwards,
+             blink 0.8s infinite;
+}
+
+/* typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.ilh-points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.ilh-points li {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+
+    padding: 16px 22px;
+    border-radius: 14px;
+    font-size: 18px;
+
+    max-width: 700px;   /* keeps boxes inside screen */
+    width: fit-content;
+
+    white-space: normal; /* allow text to go next line */
+    overflow-wrap: break-word;
+
+    opacity: 0;
+    transition: transform 0.3s ease;
+}
+
+.ilh-points li:hover {
+    transform: scale(1.05);
+}

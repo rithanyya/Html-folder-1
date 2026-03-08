@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>things he loves</title>
+<link rel="icon" href="img/img1.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<nav class="navbar">
+<a href="index.html">Home</a>
+<a href="ilh.html">Stuff I like about you</a>
+<a href="likes.html">things he loves</a>
+
+<a href="memories.html">memories</a>
+</nav>
+
+
+<center>
+    <div class="title">
+<h1 class="typewriter">
+things i love about you unfortunately?</h1>
+</div>
+<hr>
+
+
+
+<ul class="points ilh-points">
+
+<li>first of all, unfortunately you are actually the best kisser out of everyone i've kissed. yes i'm admitting it here because i would never say this to your face.</li>
+
+<li>also your biceps and chest… very annoying that they look that good. i try not to acknowledge it but yeah.</li>
+
+<li>your driving, i almost never compliment people's driving because i'm extremely picky about that, but somehow yours is actually good.don't let this inflate your ego though.</li>
+
+<li>the fact that you cannot be ragebaited. like i could try my absolute best to annoy you and you'll still stay calm like you've achieved some next level inner peace.</li>
+
+<li>and the worst part is you're actually well brought up and a pretty decent person that i cant even dislike you..</li>
+
+</ul>
+</center>
+
+<img src="img/anime.png" class="anime-float">
+<script>
+
+const points = document.querySelectorAll(".points li");
+
+points.forEach((point,index)=>{
+    setTimeout(()=>{
+        point.style.opacity="1";
+        point.style.transform="translateY(0)";
+        point.style.transition="all 0.6s ease";
+    }, index * 5000);
+});
+
+</script>
+<script>
+
+const points = document.querySelectorAll(".points li");
+
+points.forEach((point,index)=>{
+    setTimeout(()=>{
+        point.style.opacity="1";
+        point.style.transition="opacity 0.7s ease";
+    }, index * 4000);
+});
+
+</script>
+<script>
+let lastScrollTop = 0; // track last scroll position
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // scrolling down → hide navbar
+        navbar.style.top = '-100px'; // moves it out of view
+    } else {
+        // scrolling up → show navbar
+        navbar.style.top = '40px';  // original position
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // avoid negative
+});
+</script>
+</body>
+</html>
